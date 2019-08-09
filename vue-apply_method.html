@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>vue-hello</title>
+
+</head>
+<body>
+	<div id="app">
+		hello {{ msg }}
+		{{ detail() }}
+	</div>
+	<!-- <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script> -->
+	<!-- 推荐的引入方法 -->
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script>
+		let app = new Vue({
+			el: "#app",
+			data: {
+				msg: "vue"
+			},
+			methods: {
+				detail: function() {
+					return 'hello' + this.msg + 'welcome';
+				}
+			}
+		});
+	</script>
+</body>
+</html>

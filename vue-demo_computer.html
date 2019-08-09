@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>vue-hello</title>
+
+</head>
+<body>
+	<div id="app">
+		参数1：<input type="text" v-bind:value="arg1"><br>
+		参数2：<input type="text" v-bind:value="arg2"><br>
+		<input type="button" v-on:click="sum()" value="求和">
+		结果：<p>{{ sum() }}</p>
+	</div>
+	<!-- <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script> -->
+	<!-- 推荐的引入方法 -->
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script>
+		let app = new Vue({
+			el: "#app",
+			data: {
+				arg1: "",
+				arg2: "",
+			},
+			methods: {
+				sum: function() {
+					let tmp = parseInt(this.arg1) + parseInt(this.arg2);
+					if (!tmp) {
+						return '';
+					}
+					return tmp;
+				}
+			}
+		});
+	</script>
+</body>
+</html>
