@@ -1,0 +1,39 @@
+<!--
+v-for 循环指令
+v-for 指令可以绑定数组的数据来渲染一个项目列表：
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app-4">
+    <ol>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ol>
+</div>
+<!-- 生产环境版本，优化了尺寸和速度 -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    var app4 = new Vue({
+        el: '#app-4',
+        data: {
+            todos: [
+                { text: '学习 JavaScript' },
+                { text: '学习Vue' },
+                { text: '整个牛项目' }
+            ]
+        }
+    })
+</script>
+<!--
+在浏览器控制台输入 app4.todos.push({ text: '新项目' })
+发现列表最后添加了一个新项目。
+-->
+</body>
+</html>
